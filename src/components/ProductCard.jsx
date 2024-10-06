@@ -1,7 +1,7 @@
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export default function ProductCard(props) {
-  const [items, { add, remove }] = useShoppingCart();
+  const [cart, { addProduct, isProductInCart }] = useShoppingCart();
 
   return (
     <div class="card bg-slate-700 w-[310px] shadow-xl">
@@ -20,11 +20,10 @@ export default function ProductCard(props) {
           <div class="badge badge-lg badge-outline">{props.item.category}</div>
         </div>
         <button
+          disabled={isProductInCart(props.item)}
           class="btn btn-primary mt-3"
           onClick={() => {
-            console.log("HER");
-
-            add(props.item);
+            addProduct(props.item);
           }}
         >
           Add to cart

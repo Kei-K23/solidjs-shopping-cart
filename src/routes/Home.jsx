@@ -2,12 +2,9 @@ import { createResource, For, Match, Show, Switch } from "solid-js";
 import { fetcher } from "../../lib";
 import Alert from "../components/Alert";
 import ProductCard from "../components/ProductCard";
-import { useShoppingCart } from "../context/ShoppingCartContext";
 
 function Home() {
   const [data] = createResource("https://fakestoreapi.com/products", fetcher);
-  const [items] = useShoppingCart();
-  console.log(items());
 
   return (
     <div>
