@@ -1,4 +1,4 @@
-function App() {
+function Home() {
   return (
     <div>
       <h1 class="text-red-400">Hello Solidjs</h1>
@@ -6,4 +6,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
