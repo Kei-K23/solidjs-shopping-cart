@@ -2,8 +2,7 @@ import { Index } from "solid-js";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export default function ShoppingCartTable() {
-  const [cart, { addProduct, removeProduct, clearCart, isProductInCart }] =
-    useShoppingCart();
+  const [cart, { removeProduct, isProductInCart }] = useShoppingCart();
 
   return (
     <div class="overflow-x-auto">
@@ -14,6 +13,7 @@ export default function ShoppingCartTable() {
             <th>Product</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Quantity</th>
             <th></th>
           </tr>
         </thead>
@@ -25,7 +25,7 @@ export default function ShoppingCartTable() {
                 <td>
                   <div class="flex items-center gap-3">
                     <div class="avatar">
-                      <div class="mask mask-squircle h-12 w-12">
+                      <div class="mask mask-squircle size-16">
                         <img
                           src={item().image}
                           alt={item().title}
@@ -38,8 +38,11 @@ export default function ShoppingCartTable() {
                     </div>
                   </div>
                 </td>
-                <td class="line-clamp-1 text-[16px]">{item().description}</td>
+                <td class="line-clamp-2 leading-9 text-[16px]">
+                  {item().description}
+                </td>
                 <td>${item().price}</td>
+                <td>{item()?.quantity}</td>
                 <th>
                   <button class="btn btn-ghost btn-xs">details</button>
                 </th>
@@ -54,6 +57,7 @@ export default function ShoppingCartTable() {
             <th>Product</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Quantity</th>
             <th></th>
           </tr>
         </tfoot>

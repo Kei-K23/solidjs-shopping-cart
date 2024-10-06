@@ -15,7 +15,9 @@ export default function ProductCard(props) {
       <div class="card-body px-3">
         <h2 class="card-title line-clamp-2">{props.item.title}</h2>
         <div class="badge badge-lg badge-success">$ {props.item.price}</div>
-        <p class="line-clamp-3">{props.item.description}</p>
+        <p class="line-clamp-3 leading-6 text-[16px] mt-3">
+          {props.item.description}
+        </p>
         <div class="card-actions justify-between">
           <div class="badge badge-lg badge-outline">{props.item.category}</div>
         </div>
