@@ -2,11 +2,10 @@
 import { render } from "solid-js/web";
 import { Router, Route } from "@solidjs/router";
 
-import Home from "./routes/Home";
-import About from "./routes/About";
-
 import "./index.css";
 import RootLayout from "./layouts/RootLayout";
+import Home from "./routes/Home";
+import ShoppingCart from "./routes/ShoppingCart";
 
 const root = document.getElementById("root");
 
@@ -14,7 +13,7 @@ render(
   () => (
     <Router root={RootLayout}>
       <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
+      <Route path="/shopping-cart" component={ShoppingCart} />
     </Router>
   ),
   root
