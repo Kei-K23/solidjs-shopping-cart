@@ -5,7 +5,7 @@ export default function RootLayout(props) {
   return (
     <>
       <Header />
-      {props.children}
+      <main class="mt-32 mb-20">{props.children}</main>
       <Footer />
     </>
   );
