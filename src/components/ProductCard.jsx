@@ -1,4 +1,8 @@
+import { useShoppingCart } from "../context/ShoppingCartContext";
+
 export default function ProductCard(props) {
+  const [items, { add, remove }] = useShoppingCart();
+
   return (
     <div class="card bg-slate-700 w-[310px] shadow-xl">
       <figure>
@@ -15,7 +19,16 @@ export default function ProductCard(props) {
         <div class="card-actions justify-between">
           <div class="badge badge-lg badge-outline">{props.item.category}</div>
         </div>
-        <button class="btn btn-primary mt-3">Add to cart</button>
+        <button
+          class="btn btn-primary mt-3"
+          onClick={() => {
+            console.log("HER");
+
+            add(props.item);
+          }}
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );

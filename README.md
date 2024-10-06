@@ -1,3 +1,11 @@
 # SolidJS - Shopping Cart
 
-`SPA` shopping cart project that aim to learn **SolidJS**.
+`Shopping cart SPA` that build with **SolidJS**
+
+## Tech stack
+
+- SolidJS
+- Solid Router
+- Tailwind
+- DaisyUI
+- Vite
