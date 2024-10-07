@@ -20,7 +20,7 @@ function Home() {
       </Show>
       <Switch>
         <Match when={data.error}>
-          <Alert title="Error! Products data cannot be" class="my-4" />
+          <Alert title="Error! Products data cannot be fetch" class="my-4" />
         </Match>
         <Match when={data()}>
           <div class="flex items-center justify-center mt-10">

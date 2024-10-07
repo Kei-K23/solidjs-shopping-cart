@@ -1,3 +1,4 @@
+import { A } from "@solidjs/router";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export default function ProductCard(props) {
@@ -30,6 +31,13 @@ export default function ProductCard(props) {
         >
           Add to cart
         </button>
+        <A
+          class="btn btn-outline"
+          href={`/product-detail/${props.item.id}`}
+          end
+        >
+          View detail
+        </A>
       </div>
     </div>
   );

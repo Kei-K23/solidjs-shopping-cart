@@ -76,6 +76,11 @@ export function ShoppingCartProvider(props) {
     return cart().reduce((acc, curr) => acc + curr.quantity, 0);
   };
 
+  // Get total quantity of products in the cart
+  const getTotalPrice = () => {
+    return cart().reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
+  };
+
   // Clear the cart
   const clearCart = () => updateCart([]);
 
@@ -90,6 +95,7 @@ export function ShoppingCartProvider(props) {
       clearCart,
       isProductInCart,
       getTotalQuantity,
+      getTotalPrice,
     },
   ];
 

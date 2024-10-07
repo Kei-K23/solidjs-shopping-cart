@@ -2,7 +2,10 @@ import { Index } from "solid-js";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export default function ShoppingCartTable() {
-  const [cart, { removeProduct, isProductInCart }] = useShoppingCart();
+  const [
+    cart,
+    { removeProduct, isProductInCart, incrementQuantity, decrementQuantity },
+  ] = useShoppingCart();
 
   return (
     <div class="overflow-x-auto">
@@ -43,8 +46,28 @@ export default function ShoppingCartTable() {
                 </td>
                 <td>${item().price}</td>
                 <td>{item()?.quantity}</td>
-                <th>
-                  <button class="btn btn-ghost btn-xs">details</button>
+                <th class="flex items-center gap-4">
+                  <div class="flex items-center gap-2">
+                    <button
+                      class="btn btn-ghost btn-xs"
+                      onClick={() => incrementQuantity(item().id)}
+                    >
+                      +
+                    </button>
+                    <span>{item()?.quantity}</span>
+                    <button
+                      class="btn btn-ghost btn-xs"
+                      onClick={() => decrementQuantity(item().id)}
+                    >
+                      -
+                    </button>
+                  </div>
+                  <button
+                    class="btn btn-error btn-xs"
+                    onClick={() => removeProduct(item().id)}
+                  >
+                    Remove
+                  </button>
                 </th>
               </tr>
             )}
