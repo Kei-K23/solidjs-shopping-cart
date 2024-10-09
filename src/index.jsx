@@ -3,6 +3,7 @@ import { render } from "solid-js/web";
 import { Router, Route } from "@solidjs/router";
 
 import "./index.css";
+import "../node_modules/solid-rating/dist/style.css";
 import RootLayout from "./layouts/RootLayout";
 import Home from "./routes/Home";
 import ShoppingCart from "./routes/ShoppingCart";

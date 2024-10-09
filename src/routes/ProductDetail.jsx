@@ -1,6 +1,7 @@
 import { useParams } from "@solidjs/router";
 import { createResource } from "solid-js";
 import { fetcher } from "../../lib";
+import Rating from "solid-rating";
 
 export default function ProductDetail() {
   const params = useParams();
@@ -41,6 +42,13 @@ export default function ProductDetail() {
                 </div>
               </div>
               <p class="mt-8 text-lg">{data().description}</p>
+              <div class="mt-6">
+                <Rating
+                  readOnly
+                  halfFillMode
+                  initialRating={data().rating.rate}
+                />
+              </div>
             </div>
           </div>
         </Match>

@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.14.7",
-    "solid-js": "^1.9.1"
+    "solid-js": "^1.9.1",
+    "solid-rating": "^0.2.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
